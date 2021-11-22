@@ -1,4 +1,5 @@
 const mongoConnection = require('./connection');
+const jwt = require('jsonwebtoken');
 
 const getByEmail = async (email) => {
   const usersCollection = await mongoConnection.getConnection()
@@ -33,4 +34,29 @@ const createNewUserModel = async ({ email, password }) => {
   };
 };
 
-module.exports = { createNewUserModel }
+const loginUserModel = async ({ email, password }) => {
+  const usersCollection = await mongoConnection.getConnection()
+    .then((db) => db.collection('users'));
+
+  const user = await usersCollection.findOne({ email });
+
+  if (!user || (user.password !== password)) return false;
+
+  const secret = process.env.SECRET;
+
+  const payload = {
+    email,
+    password,
+  };
+
+  const token = jwt.sign(payload, secret, {
+    expiresIn: '1h',
+  });
+
+  return token;
+}
+
+module.exports = {
+  createNewUserModel,
+  loginUserModel
+}

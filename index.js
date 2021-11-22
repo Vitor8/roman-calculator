@@ -11,10 +11,13 @@ const {
 } = require('./src/validations/isDataValid');
 
 const {
-  createNewUserController
+  createNewUserController,
+  loginUsersController
 } = require('./src/controllers/userController');
 
-app.post('/user', isDataUserValid, createNewUserController); 
+app.post('/user', isDataUserValid, createNewUserController);
+
+app.post('/login', isDataUserValid, loginUsersController);
 
 app.listen(PORT, () => {
   console.log(`Aplicação ouvindo na porta ${PORT}`);

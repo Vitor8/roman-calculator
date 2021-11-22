@@ -1,7 +1,7 @@
 const {
   createNewUserModel,
+  loginUserModel
 } = require('../models/usersModel');
-
 
 const createNewUserController = async (req, res) => {
   const { email, password } = req.body;
@@ -25,4 +25,21 @@ const createNewUserController = async (req, res) => {
   });
 }
 
-module.exports = { createNewUserController }
+const loginUsersController = async (req, res) => {
+  const { email, password } = req.body;
+
+  const token = await loginUserModel({ email, password });
+
+  if (!token) {
+    return res.status(403).json({ message: 'Incorrect Email or Password' })
+  }
+
+  return res.status(200).json({
+    token,
+  });
+}
+
+module.exports = {
+  createNewUserController,
+  loginUsersController
+}
