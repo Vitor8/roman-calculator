@@ -14,7 +14,7 @@ const {
   createNewUserController
 } = require('./src/controllers/userController');
 
-app.get('/setup', isDataUserValid, createNewUserController); 
+app.post('/user', isDataUserValid, createNewUserController); 
 
 app.listen(PORT, () => {
   console.log(`Aplicação ouvindo na porta ${PORT}`);
