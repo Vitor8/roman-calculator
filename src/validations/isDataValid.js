@@ -17,9 +17,9 @@ const isDataUserValid = (req, res, next) => {
 };
 
 const areNumbersValid = (req, res, next) => {
-  const { numbersToAdd, numbersToSub } = req.body;
+  const { numbersToSum, numbersToSub } = req.body;
 
-  if (!numbersToAdd || !numbersToSub) {
+  if (!numbersToSum || !numbersToSub) {
     return res.status(400).json({ message: 'Both Arrays are mandatory!' });
   }
 
