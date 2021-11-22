@@ -1,5 +1,5 @@
-const mongoConnection = require('./connection');
 const jwt = require('jsonwebtoken');
+const mongoConnection = require('./connection');
 
 const getByEmail = async (email) => {
   const usersCollection = await mongoConnection.getConnection()
@@ -54,9 +54,9 @@ const loginUserModel = async ({ email, password }) => {
   });
 
   return token;
-}
+};
 
 module.exports = {
   createNewUserModel,
-  loginUserModel
-}
+  loginUserModel,
+};

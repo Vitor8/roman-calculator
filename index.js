@@ -7,17 +7,25 @@ app.use(bodyParser.json());
 const PORT = 3000;
 
 const {
-  isDataUserValid
+  isDataUserValid,
+  areNumbersValid,
+  isTokenValid,
 } = require('./src/validations/isDataValid');
 
 const {
   createNewUserController,
-  loginUsersController
+  loginUsersController,
 } = require('./src/controllers/userController');
+
+const {
+  calculateRomanController,
+} = require('./src/controllers/calculatorController');
 
 app.post('/user', isDataUserValid, createNewUserController);
 
 app.post('/login', isDataUserValid, loginUsersController);
+
+app.get('/calculator', isTokenValid, areNumbersValid, calculateRomanController);
 
 app.listen(PORT, () => {
   console.log(`Aplicação ouvindo na porta ${PORT}`);
