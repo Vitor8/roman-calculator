@@ -8,6 +8,15 @@ O enpoint retorna o valor final em algarismo romano e a operação que foi reali
 
 ---
 
+# Instruções para execução do projeto
+
+- Clone o repositório: `git clone git@github.com:Vitor8/roman-calculator.git`
+- Entre no diretório: `cd roman-calculator`
+- Instale as dependências: `npm install`
+- Inicie a aplicação: `npm start`
+
+---
+
 ## Estrutura
 
 Organizei meu código no seguinte formato:
