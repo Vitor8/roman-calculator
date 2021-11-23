@@ -124,8 +124,8 @@ const calculateRomanController = async (req, res) => {
   const { romanSub, subString } = subArray(numbersToSub);
 
   return res.status(200).json({
-    'Numbers Sum': `${sumString} = ${romanSum}`,
-    'Numbers Subtraction': `${subString} = ${romanSub}`,
+    numbersSum: `${sumString} = ${romanSum}`,
+    numbersSubtraction: `${subString} = ${romanSub}`,
   });
 };
 

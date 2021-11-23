@@ -25,8 +25,10 @@ app.post('/user', isDataUserValid, createNewUserController);
 
 app.post('/login', isDataUserValid, loginUsersController);
 
-app.get('/calculator', isTokenValid, areNumbersValid, calculateRomanController);
+app.post('/calculator', isTokenValid, areNumbersValid, calculateRomanController);
 
 app.listen(PORT, () => {
   console.log(`Aplicação ouvindo na porta ${PORT}`);
-}); 
+});
+
+module.exports = app;
