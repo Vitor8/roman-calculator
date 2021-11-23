@@ -79,7 +79,7 @@ Para executar os testes localmente, digite no terminal o comando `npm test`.
 
 # Requisitos do projeto
 
-Para uma melhor organização do projeto, dividi aquilo que foi pedido em 4 requisitos.
+Para uma melhor organização do projeto, optei por dividi-lo em 4 requisitos.
 
 ### 1 - Criação de endpoint para o cadastro de usuários
 
