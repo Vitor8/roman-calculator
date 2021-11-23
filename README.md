@@ -1,6 +1,6 @@
 # Boas vindas ao repositório da aplicação Roman Calculator!
 
-O objetivo foi criar uma API que simula uma calculadora de números romanos.
+O objetivo da aplicação é criar uma API que simula uma calculadora de números romanos.
 
 Os usuários precisam se cadastrar e logar e, após a autentificação JWT, os usuários mandam no body da requisição os números romanos a serem somados e subtraídos.
 
