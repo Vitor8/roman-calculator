@@ -12,24 +12,7 @@ O enpoint retorna o valor final em algarismo romano e a operação que foi reali
 
 Organizei meu código no seguinte formato:
 
-├── README.md
-├── src
-│   ├── roman-converter
-│   │   ├── dictionary.js
-│   │   └── roman.js
-│   ├── controllers
-│   │   ├── calculatorController.js
-│   │   ├── userController.js
-│   └── models
-│   │   ├── connection.js
-│   │   └── usersModel.js
-│   └── test
-│   |   └── calculator.test.js
-│   └── validations
-│       └── isDataValid.js
-└── index.js
-├── package-lock.json
-└── package.json
+![Captura de tela de 2021-11-23 15-19-30](https://user-images.githubusercontent.com/24492328/143081948-19c6ee9a-aa8a-44dd-9943-de985308f5b2.png)
 
 - No arquivo `index.js` estão os enpoints da API.
 - Na pasta `roman-converter` estão as funções que utilizo para converter algarismos romanos em arábicos, e arábicos em romanos.
