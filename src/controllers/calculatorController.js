@@ -1,67 +1,7 @@
-const fromRomanToNormal = (romanNumber) => {
-  const dictRoman = {
-    M: 1000,
-    D: 500,
-    C: 100,
-    L: 50,
-    X: 10,
-    V: 5,
-    I: 1,
-  };
-
-  let normalNumber = 0;
-  let prevNumber = 0;
-
-  for (let i = 0; i < romanNumber.length; i += 1) {
-    const currentRomanNumber = dictRoman[romanNumber[i]];
-    if (currentRomanNumber > prevNumber) {
-      normalNumber += currentRomanNumber - (2 * prevNumber);
-    } else {
-      normalNumber += currentRomanNumber;
-    }
-    prevNumber = currentRomanNumber;
-  }
-
-  return normalNumber;
-};
-
-const fromNormalToRoman = (normalNumber) => {
-  let isNormalNumberNegative = false;
-
-  if (normalNumber < 0) { 
-    isNormalNumberNegative = true;
-    normalNumber *= -1;
-  }
-
-  const dictRoman = {
-    M: 1000,
-    CM: 900,
-    D: 500,
-    CD: 400,
-    C: 100,
-    XC: 90,
-    L: 50,
-    XL: 40,
-    X: 10,
-    IX: 9,
-    V: 5,
-    IV: 4,
-    I: 1,
-  };
-
-  let romanNumber = '';
-
-  for (const romanKey in dictRoman) {
-    while (normalNumber >= dictRoman[romanKey]) {
-      romanNumber += romanKey;
-      normalNumber -= dictRoman[romanKey];
-    }
-  }
-
-  if (isNormalNumberNegative) return `-${romanNumber}`;
-
-  return romanNumber;
-};
+const {
+  fromRomanToNormal,
+  fromNormalToRoman
+} = require('../roman-converter/roman');
 
 const getRomanSum = (integerArray, romanArray) => {
   let sum = integerArray[0];
